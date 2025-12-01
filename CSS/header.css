@@ -28,7 +28,7 @@ body {
 /* El main se estira y empuja el footer */
 main {
     flex: 1 0 auto;
-    
+
 }
 
 /* Contenedores donde se inyectan header y footer HTML */
@@ -202,6 +202,15 @@ html[data-bs-theme="dark"] .logo-dark {
   background-color: #1f7d75;
 }
 
+main {
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 50px; /* o el valor que necesites */
+  }
+}
 
 /* ======================================
    8. RESPONSIVE (MÓVILES / TABLETS)

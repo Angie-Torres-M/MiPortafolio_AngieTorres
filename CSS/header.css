@@ -1,0 +1,286 @@
+/* =======================================================
+   STYLE.CSS - Portafolio Angie Torres
+   Nota para Angie del futuro:
+   - Aquí está TODO lo base del layout, tema oscuro,
+     tarjetas, header y responsive.
+   - Si algo se rompe, revisa primero IDs/clases en el HTML :)
+======================================================= */
+
+
+/* ======================================
+   1. CONFIGURACIÓN GENERAL Y LAYOUT
+====================================== */
+
+/* Que html y body ocupen toda la altura */
+html,
+body {
+    height: 100%;
+}
+
+/* Tipografía base y layout flex para empujar el footer abajo */
+body {
+    font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* El main se estira y empuja el footer */
+main {
+    flex: 1 0 auto;
+}
+
+/* Contenedores donde se inyectan header y footer HTML */
+#site-header,
+#site-footer {
+    width: 100%;
+}
+
+
+/* ======================================
+   3. ELEMENTOS GENERALES
+====================================== */
+
+/* Hero de inicio ("Hola, soy...") */
+.hero-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Títulos de sección */
+.section-title {
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+/* Fondo de secciones alternas en modo claro */
+.section-alt {
+    background-color: #e9ecef;
+}
+
+/* Texto con color acento turquesa */
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+/* Botón de toggle de tema (icono + texto) */
+#theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Iconos de redes (LinkedIn / GitHub) */
+.social-link {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(108, 117, 125, 0.5);
+    text-decoration: none;
+    color: inherit;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-1px);
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+
+/* ======================================
+   7. HEADER ANGIE (CHEWIE NAVBAR)
+====================================== */
+
+
+/* Header pegado arriba  */
+.header-fijo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 800;
+  background-color: #ffffff;
+}
+
+
+
+/* Navbar principal del portafolio (glassmorphism) */
+.angie-navbar {
+    width: 100%;
+    background-color: rgba(15, 17, 21, 0.9);
+    /* oscuro translúcido */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+}
+
+/* En modo claro, navbar con fondo claro translúcido */
+html[data-bs-theme="light"] .angie-navbar {
+    background-color: rgba(255, 255, 255, 0.952);
+}
+
+/* Contenedor interno del navbar */
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo: un poco redondeado */
+.logo-link img {
+    border-radius: 8px;
+}
+
+/* Botón hamburguesa (solo visible en móvil) */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.6rem;
+}
+
+/* Menú en desktop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+/* Lista de enlaces del menú */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+}
+
+/* Contenedor de iconos de redes dentro del header */
+.nav-social {
+    display: flex;
+    gap: 0.8rem;
+}
+
+/* Logos para modo claro/oscuro (Chewie light / Chewie dark) */
+.logo-light,
+.logo-dark {
+    display: inline-block;
+}
+
+/* Por defecto (tema light): se esconde el oscuro */
+.logo-dark {
+    display: none;
+}
+
+/* Cuando el tema es dark, se invierte la visibilidad */
+html[data-bs-theme="dark"] .logo-light {
+    display: none;
+}
+
+html[data-bs-theme="dark"] .logo-dark {
+    display: inline-block;
+}
+
+.header-separador {
+  width: 100%;
+  height: 2px;
+  background-color: #1f7d75;
+}
+
+
+/* ======================================
+   8. RESPONSIVE (MÓVILES / TABLETS)
+====================================== */
+
+/* ----- Móviles + Header hamburguesa ----- */
+@media (max-width: 768px) {
+
+    /* Mostrar botón hamburguesa en pantallas pequeñas */
+    .nav-toggle {
+        display: block;
+    }
+
+    /* Menú colapsado por defecto en móvil */
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        left: 0px;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+        padding: 0.75rem 0;
+        display: none;
+        /* oculto por defecto */
+    }
+
+    html[data-bs-theme="light"] .nav-menu {
+        background-color: rgba(255, 255, 255, 0.87);
+        /* fondo claro */
+        color: #222;
+        /* texto oscuro */
+    }
+
+    /* Links del menú en modo claro */
+    html[data-bs-theme="light"] .nav-menu a {
+        color: #222 !important;
+    }
+   html[data-bs-theme="dark"] .nav-menu {
+        background-color: rgba(0, 0, 0, 0.719);
+        /* fondo claro */
+        color: #ffffff;
+        /* texto oscuro */
+    }
+    /* Links en modo oscuro */
+    html[data-bs-theme="dark"] .nav-menu a {
+        color: #f1f1f1 !important;
+    }
+
+    /* El JS agrega .active para mostrar menú */
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    /* Hero centrado en móvil */
+    .hero-section {
+        text-align: center;
+    }
+
+    /* Foto centrada en móvil */
+    .profile-wrapper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Títulos un poco más compactos en pantallas pequeñas */
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* ----- Tablets / Desktop ----- */
+@media (min-width: 992px) {
+    .hero-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}

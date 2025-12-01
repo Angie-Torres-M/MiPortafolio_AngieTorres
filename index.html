@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio | Angie Torres</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Tus estilos -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/header.css" />
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpg" href="./images/logo.png" />
+
+</head>
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <section>
+        <header id="site-header"></header>
+    </section>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="flex-fill">
+
+        <!-- HERO / INICIO -->
+        <section id="hero" class="py-5 hero-section container">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <p class="text-uppercase small text-accent mb-0">
+                        Portafolio de Desarrolladora Full Stack Java.
+                    </p>
+
+                    <!-- Botón modo oscuro SOLO en tablet y desktop -->
+                    <button id="theme-toggle" class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
+                        <i class="fa-solid fa-moon me-1"></i>
+                        <span>Modo oscuro</span>
+                    </button>
+
+
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h1 class="display-5 fw-bold mb-2">
+                            Hola, soy <span class="text-accent">Angie Torres</span>
+                        </h1>
+                        <p class="lead mb-4">
+                            Desarrolladora Java Jr. con enfoque en backend, web y cloud.
+                            Me gusta crear soluciones limpias, bien documentadas y pensadas
+                            para personas reales.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <a href="#projects" class="btn btn-primary">
+                                Ver proyectos
+                            </a>
+                            <a href="#cv" class="btn btn-outline-primary">
+                                Ver CV
+                            </a>
+                            <a href="#blog" class="btn btn-outline-secondary">
+                                Blog / Reflexiones
+                            </a>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3 align-items-center">
+                            <div class="d-flex gap-3">
+                                <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="social-link"
+                                    aria-label="LinkedIn">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/Angie-Torres-M" target="_blank" class="social-link"
+                                    aria-label="GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                            <span class="small text-muted">
+                                Contacto: <a href="mailto:tu.correo@ejemplo.com">angelica.m.torres.morales@gmail.com</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 mt-4 mt-lg-0 text-center">
+                        <div class="profile-wrapper mx-auto">
+                            <img src="images/yo.jpeg" alt="Foto de Angie Torres" class="profile-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACERCA DE MÍ -->
+        <section id="about" class="py-5 section-alt container">
+            <div class="container">
+                <div class="row align-items-center gy-4">
+                    <div class="col-lg-6">
+                        <h2 class="section-title">Acerca de mí</h2>
+                        <p>
+                            Soy bióloga de formación, maestra en docencia y desarrolladora
+                            Java / Web en transición de carrera. Disfruto aprender,
+                            documentar y construir proyectos que conecten tecnología con
+                            necesidades reales.
+                        </p>
+                        <p>
+                            He trabajado con Java, JavaScript, Python, AWS Cloud, HTML, CSS,
+                            Bootstrap y React. Me interesa seguir creciendo en desarrollo
+                            backend, arquitectura de aplicaciones y buenas prácticas de
+                            ingeniería de software.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="info-card">
+                                    <span class="info-label">Rol principal</span>
+                                    <p class="mb-0">Desarrolladora Java Jr. / Web</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="info-card">
+                                    <span class="info-label">Enfoques</span>
+                                    <p class="mb-0">Backend, APIs, documentación técnica</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="info-card">
+                                    <span class="info-label">Intereses</span>
+                                    <p class="mb-0">Cloud, educación, proyectos con impacto</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="info-card">
+                                    <span class="info-label">Fun fact</span>
+                                    <p class="mb-0">Dog-mom de Chewbacca</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section id="skills" class="py-5 container">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Habilidades</h2>
+                <p class="text-center mb-4">
+                    Estas son algunas de las tecnologías y habilidades que utilizo en mis proyectos.
+                </p>
+
+                <div class="row g-3">
+                    <!-- Backend / Java -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="skill-card">
+                            <i class="fa-solid fa-code-branch skill-icon"></i>
+                            <h3 class="h6 fw-bold mb-1">Backend </h3>
+                            <p class="small mb-1">Java | C# | JDBC | Spring Boot</p>
+                            <span class="badge badge-skill">POO & Colecciones</span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="skill-card">
+                            <i class="fa-solid fa-laptop-code skill-icon"></i>
+                            <h3 class="h6 fw-bold mb-1">Frontend</h3>
+                            <p class="small mb-1">HTML | CSS | Bootstrap | JS | React </p>
+                            <span class="badge badge-skill">Responsive & UX/UI</span>
+                        </div>
+                    </div>
+
+                    <!-- Data / Python / SQL -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="skill-card">
+                            <i class="fa-solid fa-database skill-icon"></i>
+                            <h3 class="h6 fw-bold mb-1">Datos & SQL</h3>
+                            <p class="small mb-1">Python • SQL | Análisis básico</p>
+                            <span class="badge badge-skill">Consultas</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud / Soft Skills -->
+                    <div class="col-md-3 col-sm-6">
+                        <div class="skill-card">
+                            <i class="fa-solid fa-cloud skill-icon"></i>
+                            <h3 class="h6 fw-bold mb-1">Cloud & Soft Skills</h3>
+                            <p class="small mb-1">AWS Cloud Practitioner | Trabajo en equipo</p>
+                            <span class="badge badge-skill"> Liderazgo & Proactividad
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="projects" class="py-5 section-alt container">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Proyectos</h2>
+                <p class="text-center mb-5">
+                    Aquí muestro una selección de proyectos académicos y personales
+                    relevantes para el rol de desarrolladora Java / Web.
+                </p>
+
+                <div class="row g-4">
+
+                    <!-- Proyecto 1: FunOnTrip -->
+                    <div class="col-md-6">
+                        <article class="project-card h-100">
+                            <div class="project-header">
+                                <h3 class="h5 mb-1">FunOnTrip – E-commerce de viajes</h3>
+                                <span class="badge text-bg-primary">Equipo · Full Stack</span>
+                            </div>
+                            <p class="small text-muted mb-2">
+                                Plataforma para explorar paquetes de viaje, con enfoque en
+                                arquitectura Java + MySQL y frontend en Bootstrap.
+                            </p>
+                            <p class="small mb-2">
+                                <strong>Rol:</strong> Frontend & responsive, documentación y revisión de código.
+                            </p>
+                            <p class="small mb-2">
+                                <strong>Tecnologías:</strong> Java, MySQL, HTML, CSS, Bootstrap, Git/GitHub.
+                            </p>
+
+                            <div id="project1-more" class="project-more d-none">
+                                <p class="small mb-2">
+                                    <strong>Desafíos:</strong> coordinación del equipo, manejo de ramas en Git,
+                                    integración de vistas y componentes responsivos.
+                                </p>
+                                <p class="small mb-0">
+                                    <strong>Aprendizajes clave:</strong> flujo de trabajo en equipo con Git,
+                                    definición de sprints, y buenas prácticas de organización de código.
+                                </p>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
+                                    data-target="project1-more">
+                                    Ver más
+                                </button>
+                                <a href="https://github.com/Angie-Torres-M/E-commerce_FunOnTrip_Equipo4/tree/develop"
+                                    target="_blank" class="btn btn-sm btn-outline-primary">
+                                    Código en GitHub
+                                </a>
+                                <a href="https://angie-torres-m.github.io/E-commerce_FunOnTrip_Equipo4/" target="_blank"
+                                    class="btn btn-sm btn-outline-success">
+                                    Ver demo
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Proyecto 2: Maíz Fundido -->
+                    <div class="col-md-6">
+                        <article class="project-card h-100">
+                            <div class="project-header">
+                                <h3 class="h5 mb-1">Maíz Fundido – Sitio de impresión 3D</h3>
+                                <span class="badge text-bg-primary">Freelance · Frontend</span>
+                            </div>
+                            <p class="small text-muted mb-2">
+                                Landing page para una marca de accesorios impresos en 3D,
+                                enfocada en mostrar productos y formas de contacto.
+                            </p>
+                            <p class="small mb-2">
+                                <strong>Rol:</strong> Diseño UI, maquetado y estilos responsive.
+                            </p>
+                            <p class="small mb-2">
+                                <strong>Tecnologías:</strong> HTML, CSS, Bootstrap, GitHub Pages.
+                            </p>
+
+                            <div id="project2-more" class="project-more d-none">
+                                <p class="small mb-2">
+                                    <strong>Desafíos:</strong> crear una identidad visual coherente,
+                                    manejo de paleta de colores y tipografías.
+                                </p>
+                                <p class="small mb-0">
+                                    <strong>Aprendizajes clave:</strong> diseño centrado en el usuario,
+                                    estructura clara de secciones y optimización para móviles.
+                                </p>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
+                                    data-target="project2-more">
+                                    Ver más
+                                </button>
+                                <a href="https://github.com/Angie-Torres-M/MaizFundido" target="_blank"
+                                    class="btn btn-sm btn-outline-primary">
+                                    Código en GitHub
+                                </a>
+                                <a href=" https://angie-torres-m.github.io/MaizFundido/" target="_blank"
+                                    class="btn btn-sm btn-outline-success">
+                                    Ver demo
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+ <!-- Proyecto 3: Conversor de temperatura PEACH -->
+                    <div class="col-md-6">
+                        <article class="project-card h-100">
+                            <div class="project-header">
+                                <h3 class="h5 mb-1">PEACH – Conversor de temperatura</h3>
+                                <span class="badge badge-rosa-bs">Personal · Frontend</span>
+                            </div>
+                            <p class="small text-muted mb-2">
+                                Aplicación web sencilla para convertir entre diferentes escalas
+                                de temperatura con una interfaz clara.
+                            </p>
+                            <p class="small mb-2">
+                                <strong>Rol:</strong> Lógica de conversión y UI básica.
+                            </p>
+                            <p class="small mb-2">
+                                <strong>Tecnologías:</strong> HTML, CSS, JavaScript.
+                            </p>
+
+                            <div id="project4-more" class="project-more d-none">
+                                <p class="small mb-0">
+                                    <strong>Aprendizajes clave:</strong> manejo de eventos en JS,
+                                    validación simple de formularios y despliegue en GitHub Pages.
+                                </p>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
+                                    data-target="project4-more">
+                                    Ver más
+                                </button>
+                                <a href="https://github.com/Angie-Torres-M/PEACH_TemperatureConversion" target="_blank"
+                                    class="btn btn-sm btn-outline-primary">
+                                    Código en GitHub
+                                </a>
+                                </a>
+                                <a href=" https://angie-torres-m.github.io/PEACH_TemperatureConversion/" target="_blank"
+                                    class="btn btn-sm btn-outline-success">
+                                    Ver demo
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Proyecto 4: Consumo de API FakeStore (JS + Fetch) -->
+                    <div class="col-md-6">
+                        <article class="project-card h-100">
+                            <div class="project-header">
+                                <h3 class="h5 mb-1">FakeStore API – Consumo de API con JavaScript</h3>
+                                <span class="badge text-bg-secondary">Académico · Frontend</span>
+                            </div>
+
+                            <p class="small text-muted mb-2">
+                                Sitio web que obtiene productos desde la API pública FakeStore usando
+                                <code>fetch()</code>, mostrando tarjetas dinámicas con su nombre, precio e imagen.
+                            </p>
+
+                            <p class="small mb-2">
+                                <strong>Rol:</strong> Integración API, render dinámico y estilos con Bootstrap.
+                            </p>
+
+                            <p class="small mb-2">
+                                <strong>Tecnologías:</strong> JavaScript, Fetch API, HTML, CSS, Bootstrap.
+                            </p>
+
+                            <div id="project-fakestore-more" class="project-more d-none">
+                                <p class="small mb-0">
+                                    <strong>Aprendizajes clave:</strong> manejo de promesas, funciones asíncronas,
+                                    render dinámico del DOM y estructura de componentes con JS.
+                                </p>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
+                                    data-target="project-fakestore-more">
+                                    Ver más
+                                </button>
+
+                                <a href="https://github.com/Angie-Torres-M/FakeStore_UsoDeAPIs" target="_blank"
+                                    class="btn btn-sm btn-outline-primary">
+                                    Código en GitHub
+                                </a>
+
+                                <a href="https://angie-torres-m.github.io/FakeStore_UsoDeAPIs/" target="_blank"
+                                    class="btn btn-sm btn-outline-success">
+                                    Ver demo
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                   
+
+
+
+                    <!-- Proyecto 4: App Banco – Crédito y Débito (C#) -->
+                    <div class="col-md-6">
+                        <article class="project-card h-100">
+                            <div class="project-header">
+                                <h3 class="h5 mb-1">App Banco – Débito y Crédito con C#</h3>
+                                <span class="badge text-bg-secondary">Académico · Backend</span>
+                            </div>
+
+                            <p class="small text-muted mb-2">
+                                Aplicación de consola para simular operaciones bancarias como depósitos,
+                                retiros, cargos por crédito y validaciones básicas.
+                            </p>
+
+                            <p class="small mb-2">
+                                <strong>Rol:</strong> Programación de todas las clases, métodos y pruebas manuales.
+                            </p>
+
+                            <p class="small mb-2">
+                                <strong>Tecnologías:</strong> C#, POO, encapsulamiento, métodos, .NET.
+                            </p>
+
+                            <div id="project-banco-more" class="project-more d-none">
+                                <p class="small mb-0">
+                                    <strong>Aprendizajes clave:</strong> manejo de estados de cuenta,
+                                    validaciones, uso de métodos, organización OOP y separación en clases
+                                    como <em>Cuenta</em> y <em>CuentaCredito</em>.
+                                </p>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 mt-3">
+                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
+                                    data-target="project-banco-more">
+                                    Ver más
+                                </button>
+
+                                <a href="https://github.com/Angie-Torres-M/AppBanco-DebitoyCredito" target="_blank"
+                                    class="btn btn-sm btn-outline-primary">
+                                    Código en GitHub
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Proyecto 3: School System (Java) -->
+                    <div class="col-md-6">
+                        <article class="project-card h-100">
+                            <div class="project-header">
+                                <h3 class="h5 mb-1">Sistema escolar – Gestión escolar en Java</h3> <span
+                                    class="badge text-bg-secondary">Académico · Backend</span>
+                            </div>
+                            <p class="small text-muted mb-2"> Sistema básico para gestionar estudiantes y cursos,
+                                aplicando POO, listas y lógica de negocio en Java. </p>
+                            <p class="small mb-2"> <strong>Rol:</strong> Desarrollo completo de clases y métodos. </p>
+                            <p class="small mb-2"> <strong>Tecnologías:</strong> Java, POO, Colecciones, Eclipse. </p>
+                            <div id="project3-more" class="project-more d-none">
+                                <p class="small mb-0"> <strong>Aprendizajes clave:</strong> sobrecarga de constructores,
+                                    encapsulamiento, separación de responsabilidades y testing manual. </p>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 mt-3"> <button class="btn btn-sm btn-outline-secondary"
+                                    data-toggle="ver-mas" data-target="project3-more"> Ver más </button> <a
+                                    href="https://github.com/Angie-Torres-M/OOP_SchoolSystemProject" target="_blank"
+                                    class="btn btn-sm btn-outline-primary"> Código en GitHub </a> </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CV / RESUMEN -->
+        <section id="cv" class="py-5 container">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Resumen</h2>
+                <p class="text-center mb-4">
+                    Resumen rápido de mi formación y experiencia relevante.
+                </p>
+
+                <div class="row gy-4">
+                    <div class="col-lg-6">
+                        <h3 class="h5 mb-3">Formación</h3>
+                        <ul class="timeline">
+                            <li>
+                                <h4 class="h6 mb-1">Bootcamp Full Stack Java</h4>
+                                <p class="small mb-1">Generation México · 2025</p>
+                                <p class="small text-muted mb-0">
+                                    Enfoque en Java, POO, bases de datos, web y buenas prácticas.
+                                </p>
+                            </li>
+                            <li>
+                                <h4 class="h6 mb-1">Maestría en Docencia</h4>
+                                <p class="small mb-1">UNAM</p>
+                                <p class="small text-muted mb-0">
+                                    Desarrollo de competencias pedagógicas y enfoque en aprendizaje.
+                                </p>
+                            </li>
+                            <li>
+                                <h4 class="h6 mb-1">Biología</h4>
+                                <p class="small mb-1">UNAM</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <h3 class="h5 mb-3">Habilidades destacadas</h3>
+                        <div class="row g-2">
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled small mb-0">
+                                    <li>• Java · POO</li>
+                                    <li>• HTML · CSS · Bootstrap</li>
+                                    <li>• JavaScript básico</li>
+                                    <li>• Python & SQL</li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6">
+                                <ul class="list-unstyled small mb-0">
+                                    <li>• Git & GitHub</li>
+                                    <li>• Documentación técnica</li>
+                                    <li>• Trabajo en equipo</li>
+                                    <li>• Comunicación empática</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="mt-3">
+                            <a href="Doc/CV_AngelicaTorres_DS.pdf" target="_blank"
+                                class="btn btn-outline-primary btn-sm">
+                                Descargar CV en PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG -->
+        <section id="blog" class="py-5 section-alt container">
+            <div class="container">
+                <h2 class="section-title text-center mb-4">Blog</h2>
+                <p class="text-center mb-5">
+                    Reflexiones sobre mi camino como desarrolladora Java y aprendiz de TI.
+                </p>
+
+                <!-- Entrada obligatoria: reflexión -->
+                <article class="blog-card">
+                    <h3 class="h5 mb-1">Reflexión de mi camino como desarrolladora Java</h3>
+                    <p class="small text-muted mb-2">Entrada de blog · 2025</p>
+
+                    <p class="mb-2">
+                        Empecé en el mundo de la programación hace tres años, primero con Python
+                        y después con desarrollo web mientras practicaba como freelance.
+                        Hoy continúo mi camino como desarrolladora Full Stack con Java,
+                        complementando mi formación con cursos de Scrum y AWS Cloud.
+                        Mi transición no estuvo marcada por el miedo a “no encajar”, sino por la
+                        duda natural de cambiar de rumbo después de una trayectoria previa en biología
+                        y docencia. Aun así, descubrí en la tecnología un espacio donde mi curiosidad
+                        y capacidad de aprendizaje encontraron un nuevo propósito.
+                    </p>
+
+                    <div id="blog1-more" class="blog-more d-none">
+                        <p class="mb-2">
+                            Durante este tiempo he trabajado con POO, colecciones, proyectos web,
+                            Git/GitHub y buenas prácticas técnicas. Pero sobre todo, he aprendido
+                            a mantener la disciplina y paciencia necesarias para resolver problemas
+                            incluso cuando “no compila” a la primera.
+                        </p>
+                        <p class="mb-0">
+                            Mis metas a corto plazo son fortalecer mi lógica de backend y profundizar
+                            en arquitectura de aplicaciones. A largo plazo, quiero participar en
+                            proyectos donde se crucen educación, datos y tecnología, aportando
+                            soluciones con impacto real en las personas.
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                    <button class="btn btn-sm btn-outline-secondary mt-2 " data-toggle="ver-mas"
+                        data-target="blog1-more">
+                        Leer más
+                    </button>
+                    </div>
+                </article>
+            </div>
+
+
+            
+        </section>
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="site-footer">
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tu JS -->
+    <script src="./JS/main.js"></script>
+
+</body>
+
+</html>

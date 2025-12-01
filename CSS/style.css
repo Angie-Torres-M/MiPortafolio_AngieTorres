@@ -1,0 +1,322 @@
+/* =======================================================
+   STYLE.CSS - Estilos generales portafolio / página
+   Nota para Angie del futuro:
+   - Aquí está la base de layout, tema oscuro, cards y responsive.
+   - No hay nada de header/footer dinámico en este archivo.
+======================================================= */
+
+
+/* ======================================
+   1. CONFIGURACIÓN GENERAL Y LAYOUT
+====================================== */
+
+/* Que html y body ocupen toda la altura para poder empujar el footer abajo */
+html,
+body {
+  height: 100%;
+}
+
+/* Tipografía principal y layout en columna (header - contenido - footer) */
+body {
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* El main crece para rellenar el espacio entre header y footer */
+main {
+  flex: 1 0 auto;
+}
+
+
+/* ======================================
+   2. COLORES BASE Y TEMA OSCURO
+====================================== */
+
+/* Variables de color personalizadas (paleta turquesa) */
+:root {
+  --accent-color: #5dc1b9;
+  --accent-color-strong: #1f7d75;
+}
+
+/* Modo oscuro: fondo general y color de texto */
+html[data-bs-theme="dark"] body {
+  background-color: #0f1115 !important;
+  color: #d9dadd !important;
+}
+
+/* Secciones alternas (las que usan .section-alt) en oscuro */
+html[data-bs-theme="dark"] .section-alt {
+  background-color: #1a1d23 !important;
+}
+
+/* Cards en modo oscuro: proyectos, blog, info, skills */
+html[data-bs-theme="dark"] .project-card,
+html[data-bs-theme="dark"] .blog-card,
+html[data-bs-theme="dark"] .info-card,
+html[data-bs-theme="dark"] .skill-card {
+  background-color: #1f242b !important;
+  border-color: #2b313a !important;
+  color: #d9dadd !important;
+}
+
+/* Títulos (h2, h3, .section-title) en oscuro */
+html[data-bs-theme="dark"] h2,
+html[data-bs-theme="dark"] h3,
+html[data-bs-theme="dark"] .section-title {
+  color: #ffffff !important;
+}
+
+/* Textos pequeños y párrafos en oscuro */
+html[data-bs-theme="dark"] .small,
+html[data-bs-theme="dark"] p {
+  color: #c4c7cc !important;
+}
+
+/* Línea del timeline en modo oscuro */
+html[data-bs-theme="dark"] .timeline {
+  border-left-color: #3b4552 !important;
+}
+
+/* Puntos del timeline en modo oscuro */
+html[data-bs-theme="dark"] .timeline li::before {
+  background-color: #5DC1B9 !important;
+}
+
+/* Botón "ver más" en modo oscuro (.btn-outline-secondary) */
+html[data-bs-theme="dark"] .btn-outline-secondary {
+  color: #d9dadd !important;
+  border-color: #8a8d93 !important;
+}
+
+html[data-bs-theme="dark"] .btn-outline-secondary:hover {
+  background-color: #5DC1B9 !important;
+  color: #0f1115 !important;
+}
+
+/* Botón outline primario (ej. Descargar CV) en modo oscuro */
+html[data-bs-theme="dark"] .btn-outline-primary {
+  color: #5DC1B9 !important;
+  border-color: #5DC1B9 !important;
+}
+
+html[data-bs-theme="dark"] .btn-outline-primary:hover {
+  background-color: #5DC1B9 !important;
+  color: #0f1115 !important;
+}
+
+/* Iconos sociales en modo oscuro */
+html[data-bs-theme="dark"] .social-link {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #d9dadd !important;
+}
+
+html[data-bs-theme="dark"] .social-link:hover {
+  background-color: rgba(93, 193, 185, 0.2) !important;
+  color: #5DC1B9 !important;
+}
+
+
+/* ======================================
+   3. ELEMENTOS GENERALES VISUALES
+====================================== */
+/* Contenedores donde se inyectan header y footer (si usas includeHTML) */
+#site-header,
+#site-footer {
+  width: 100%;
+}
+
+
+/* Sección hero (presentación inicial) */
+.hero-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Títulos de sección (ej. "Habilidades", "Proyectos") */
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+/* Fondo de secciones alternas en modo claro (.section-alt) */
+.section-alt {
+  background-color: #e9ecef;
+}
+
+/* Texto con color de acento (turquesa) */
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+/* Botón para cambiar de modo claro/oscuro (icono + texto) */
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Iconos de redes (LinkedIn, GitHub, etc.) */
+.social-link {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(108, 117, 125, 0.5);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-1px);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+
+/* ======================================
+   4. FOTO / PERFIL
+====================================== */
+
+/* Contenedor circular con borde turquesa para la foto */
+.profile-wrapper {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+  padding: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Imagen recortada en círculo que rellena todo el wrapper */
+.profile-img {
+  width: 100% !important;  /* Mantener la imagen dentro del círculo */
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+/* ======================================
+   5. CARDS: INFO / SKILLS / PROYECTOS / BLOG
+====================================== */
+
+/* Estilo base para todas las tarjetas */
+.info-card,
+.skill-card,
+.project-card,
+.blog-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.2rem;
+}
+
+/* Etiquetas pequeñas (ej. "Rol principal", "Intereses") */
+.info-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6c757d;
+}
+
+/* Iconos grandes en las tarjetas de skills */
+.skill-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+  color: var(--accent-color);
+}
+
+/* Badge para resaltar una skill (ej. "Java", "Responsive") */
+.badge-skill {
+  background-color: var(--accent-color) !important;
+  color: #fff !important;
+  font-size: 0.7rem !important;
+}
+
+/* Header de la card de proyecto (título + badge de tipo) */
+.project-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+/* Card de blog centrada y con ancho máximo */
+.blog-card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+/* ======================================
+   6. TIMELINE (CV / FORMACIÓN)
+====================================== */
+
+/* Línea vertical de tiempo para formación o experiencia */
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  margin-left: 0.4rem;
+}
+
+/* Cada ítem de la línea de tiempo */
+.timeline li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Circulito marcador en la línea de tiempo */
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -0.45rem;
+  top: 0.35rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+.badge-rosa-bs {
+  background-color:  #68243d!important; 
+  color: #ffe0eb !important;            
+  border: 1px solid #f5b6cc;
+}
+/* ======================================
+   7. RESPONSIVE / ADAPTACIÓN A PANTALLA
+====================================== */
+
+/* ----- Ajustes para móviles (pantallas pequeñas) ----- */
+@media (max-width: 767.98px) {
+  /* Hero centrado en móvil */
+  .hero-section {
+    text-align: center;
+  }
+
+  /* Foto centrada en móvil */
+  .profile-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Títulos un poco más pequeños para pantallas chicas */
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ----- Ajustes para tablets / desktop ----- */
+@media (min-width: 992px) {
+  /* Hero con más espacio vertical en pantallas grandes */
+  .hero-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}

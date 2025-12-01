@@ -147,15 +147,6 @@ function initVerMasButtons() {
     });
   });
 }
-// AJUSTA este valor según la altura real de tu header fijo
-document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".header-fijo");
-  const main = document.querySelector("main");
 
-  if (header && main) {
-    const headerHeight = header.offsetHeight;
-    main.style.marginTop = headerHeight + "px";
-  }
-});
 
 

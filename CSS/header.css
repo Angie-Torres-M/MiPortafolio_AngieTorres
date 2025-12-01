@@ -28,6 +28,7 @@ body {
 /* El main se estira y empuja el footer */
 main {
     flex: 1 0 auto;
+    
 }
 
 /* Contenedores donde se inyectan header y footer HTML */

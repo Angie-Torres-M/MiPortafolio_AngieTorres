@@ -289,6 +289,17 @@ html[data-bs-theme="dark"] .social-link:hover {
   color: #ffe0eb !important;            
   border: 1px solid #f5b6cc;
 }
+
+main {
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 50px; /* o el valor que necesites */
+  }
+}
+
 /* ======================================
    7. RESPONSIVE / ADAPTACIÓN A PANTALLA
 ====================================== */

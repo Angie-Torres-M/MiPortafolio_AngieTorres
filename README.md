@@ -11,7 +11,7 @@ Mi meta es crear soluciones útiles, bien estructuradas y centradas en las perso
 
 ---
 
-## 🛠️ Tecnologías principales
+## Tecnologías principales
 
 ### **Frontend**
 - HTML5, CSS3, Bootstrap  

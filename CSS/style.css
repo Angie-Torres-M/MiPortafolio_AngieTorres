@@ -252,6 +252,69 @@ html[data-bs-theme="dark"] .social-link:hover {
   max-width: 800px;
   margin: 0 auto;
 }
+/* imagenes proyectos*/
+.project-thumb img {
+  width: 100%;
+  height: auto;          /* CLAVE */
+  object-fit: contain;  /* CLAVE */
+  display: block;
+}
+
+.project-thumb {
+  background-color: #fff;
+  padding: .75rem;
+  border-radius: 12px;
+}
+
+
+/*habilidades */
+/* ====== SKILLS – AJUSTE VISUAL ====== */
+
+.skill-box{
+  padding: 1.25rem;              /* más aire */
+}
+
+/* Título del apartado (Frontend, Web & Tools, Trabajo) */
+.skill-box h4{
+  font-size: 1rem;               /* antes ~0.875rem */
+  font-weight: 600;
+  margin-bottom: .75rem;
+  letter-spacing: .3px;
+}
+
+/* Badges de skills */
+.skill-box .badge{
+  font-size: .85rem;             /* más grande */
+  padding: .45em .75em;          /* más “botón” */
+  font-weight: 500;
+}
+
+/* Opcional: hover sutil (se ve muy pro) */
+.skill-box .badge:hover{
+  background-color: var(--bs-primary);
+  cursor: default;
+}
+#cv h3{
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+#cv h2.section-title{
+  font-size: 2rem;
+}
+.skill-box-action{
+  display: flex;
+  justify-content: flex-end;   /* derecha */
+  align-items: flex-end;       /* abajo */
+}
+/*boton cv de resumen*/
+.skill-box-action{
+  display: flex;
+  justify-content: flex-end;   /* derecha */
+  align-items: flex-end;       /* abajo */
+  padding-bottom: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 
 
 /* ======================================

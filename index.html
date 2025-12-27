@@ -2,613 +2,600 @@
 <html lang="es" data-bs-theme="light">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio | Angie Torres</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio | Angie Torres</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Tus estilos -->
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link rel="stylesheet" href="./CSS/header.css" />
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <link rel="stylesheet" href="./CSS/header.css" />
 
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpg" href="./images/logo.png" />
-
-</head>
-
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpg" href="./images/logo.png" />
 </head>
 
 <body>
-    <!-- HEADER -->
-    <section>
-        <header id="site-header"></header>
+  <!-- HEADER -->
+  <section>
+    <header id="site-header"></header>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="flex-fill">
+
+    <!-- HERO / INICIO -->
+    <section id="hero" class="py-5 hero-section container">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <p class="text-uppercase small text-accent mb-0" data-i18n="hero.kicker">
+            Portafolio · Web Design & Frontend (HTML/CSS/Bootstrap/JS)
+          </p>
+
+          <button id="lang-toggle" class="btn btn-outline-primary btn-sm" data-i18n="hero.langToggle">
+            ES / EN
+          </button>
+
+          <button id="theme-toggle" class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
+            <i class="fa-solid fa-moon me-1"></i>
+            <span data-i18n="theme.dark">Modo oscuro</span>
+          </button>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-lg-7">
+            <h1 class="display-5 fw-bold mb-2" data-i18n="hero.title">
+              Hola, soy <span class="text-accent">Angie Torres</span>
+            </h1>
+
+            <p class="lead mb-3" data-i18n="hero.description">
+              Web Designer / Frontend Developer Jr. enfocada en crear interfaces limpias, responsivas y accesibles.
+              Disfruto convertir ideas en experiencias claras para el usuario, con atención al detalle visual y buen
+              mantenimiento del código.
+            </p>
+
+            <ul class="small text-muted mb-4">
+              <li data-i18n="hero.bullets.ui">UI responsive con Bootstrap (mobile-first)</li>
+              <li data-i18n="hero.bullets.components">Maquetación y componentes reutilizables</li>
+              <li data-i18n="hero.bullets.js">Integración básica con JavaScript (DOM, fetch)</li>
+              <li data-i18n="hero.bullets.git">Trabajo con Git/GitHub y despliegue en GitHub Pages</li>
+            </ul>
+
+            <div class="d-flex flex-wrap gap-2 mb-4">
+              <a href="#projects" class="btn btn-primary" data-i18n="hero.buttons.projects">
+                Ver proyectos
+              </a>
+              <a href="#cv" class="btn btn-outline-primary" data-i18n="hero.buttons.cv">
+                Ver CV
+              </a>
+              <a href="#blog" class="btn btn-outline-secondary" data-i18n="hero.buttons.blog">
+                Blog / Reflexiones
+              </a>
+            </div>
+
+            <div class="d-flex flex-wrap gap-3 align-items-center">
+              <div class="d-flex gap-3">
+                <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="social-link"
+                  aria-label="LinkedIn">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Angie-Torres-M" target="_blank" class="social-link" aria-label="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+
+              <span class="small text-muted">
+                <span data-i18n="hero.contactLabel">Contacto:</span>
+                <a href="mailto:angelica.m.torres.morales@gmail.com">angelica.m.torres.morales@gmail.com</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="col-lg-5 mt-4 mt-lg-0 text-center">
+            <div class="profile-wrapper mx-auto">
+              <img src="images/yo.jpeg" alt="Foto de Angie Torres" class="profile-img" />
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="flex-fill" >
 
-        <!-- HERO / INICIO -->
-        <section id="hero" class="py-5 hero-section container">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-start mb-3">
-                    <p class="text-uppercase small text-accent mb-0">
-                        Portafolio · Web Design & Frontend (HTML/CSS/Bootstrap/JS)
-                    </p>
+    <!-- ACERCA DE MÍ -->
+    <section id="about" class="py-5 section-alt container">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <h2 class="section-title" data-i18n="about.title">Acerca de mí</h2>
 
-                    <!-- Botón modo oscuro SOLO en tablet y desktop -->
-                    <button id="theme-toggle" class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-                        <i class="fa-solid fa-moon me-1"></i>
-                        <span>Modo oscuro</span>
-                    </button>
+            <p data-i18n="about.p1">
+              Soy desarrolladora web en transición de carrera, con formación Full Stack y una base sólida en frontend
+              y diseño de interfaces. Me gusta construir experiencias claras y consistentes:
+              componentes reutilizables, buena jerarquía visual y enfoque mobile-first.
+            </p>
+
+            <p data-i18n="about.p2">
+              He trabajado con HTML, CSS, Bootstrap, JavaScript y React, además de Git/GitHub.
+              Actualmente busco crecer como Web Designer / Frontend Developer, fortaleciendo UI/UX,
+              accesibilidad y buenas prácticas de implementación, con comprensión del contexto Full Stack.
+            </p>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="info-card">
+                  <span class="info-label" data-i18n="about.cards.role.label">Rol principal</span>
+                  <p class="mb-0" data-i18n="about.cards.role.value">Web Designer / Frontend Jr.</p>
                 </div>
+              </div>
 
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <h1 class="display-5 fw-bold mb-2">
-                            Hola, soy <span class="text-accent">Angie Torres</span>
-                        </h1>
-
-                        <p class="lead mb-3">
-                            Web Designer / Frontend Developer Jr. enfocada en crear interfaces limpias, responsivas y
-                            accesibles.
-                            Disfruto convertir ideas en experiencias claras para el usuario, con atención al detalle
-                            visual y buen
-                            mantenimiento del código.
-                        </p>
-
-                        <ul class="small text-muted mb-4">
-                            <li>UI responsive con Bootstrap (mobile-first)</li>
-                            <li>Maquetación y componentes reutilizables</li>
-                            <li>Integración básica con JavaScript (DOM, fetch)</li>
-                            <li>Trabajo con Git/GitHub y despliegue en GitHub Pages</li>
-                        </ul>
-
-                        <div class="d-flex flex-wrap gap-2 mb-4">
-                            <a href="#projects" class="btn btn-primary">
-                                Ver proyectos
-                            </a>
-                            <a href="#cv" class="btn btn-outline-primary">
-                                Ver CV
-                            </a>
-                            <a href="#blog" class="btn btn-outline-secondary">
-                                Blog / Reflexiones
-                            </a>
-                        </div>
-
-                        <div class="d-flex flex-wrap gap-3 align-items-center">
-                            <div class="d-flex gap-3">
-                                <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="social-link"
-                                    aria-label="LinkedIn">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                </a>
-                                <a href="https://github.com/Angie-Torres-M" target="_blank" class="social-link"
-                                    aria-label="GitHub">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                            </div>
-
-                            <span class="small text-muted">
-                                Contacto:
-                                <a
-                                    href="mailto:angelica.m.torres.morales@gmail.com">angelica.m.torres.morales@gmail.com</a>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5 mt-4 mt-lg-0 text-center">
-                        <div class="profile-wrapper mx-auto">
-                            <img src="images/yo.jpeg" alt="Foto de Angie Torres" class="profile-img" />
-                        </div>
-                    </div>
+              <div class="col-sm-6">
+                <div class="info-card">
+                  <span class="info-label" data-i18n="about.cards.focus.label">Enfoques</span>
+                  <p class="mb-0" data-i18n="about.cards.focus.value">UI, responsive, accesibilidad</p>
                 </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="info-card">
+                  <span class="info-label" data-i18n="about.cards.interests.label">Intereses</span>
+                  <p class="mb-0" data-i18n="about.cards.interests.value">Design systems, UX/UI, performance</p>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="info-card">
+                  <span class="info-label" data-i18n="about.cards.fun.label">Fun fact</span>
+                  <p class="mb-0" data-i18n="about.cards.fun.value">Dog-mom de mi perrito Chewbacca</p>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- ACERCA DE MÍ -->
-        <section id="about" class="py-5 section-alt container">
-            <div class="container">
-                <div class="row align-items-center gy-4">
-                    <div class="col-lg-6">
-                        <h2 class="section-title">Acerca de mí</h2>
+        </div>
+      </div>
+    </section>
 
-                        <p>
-                            Soy desarrolladora web en transición de carrera, con formación Full Stack y una base sólida
-                            en frontend
-                            y diseño de interfaces. Me gusta construir experiencias claras y consistentes:
-                            componentes reutilizables, buena jerarquía visual y enfoque mobile-first.
-                        </p>
+    <!-- HABILIDADES -->
+    <section id="skills" class="py-5 container">
+      <div class="container">
+        <h2 class="section-title text-center mb-4" data-i18n="skills.title">Habilidades</h2>
+        <p class="text-center mb-4" data-i18n="skills.subtitle">
+          Tecnologías y habilidades que utilizo en mis proyectos.
+        </p>
 
-                        <p>
-                            He trabajado con HTML, CSS, Bootstrap, JavaScript y React, además de Git/GitHub.
-                            Actualmente busco crecer como Web Designer / Frontend Developer, fortaleciendo UI/UX,
-                            accesibilidad y buenas prácticas de implementación, con comprensión del contexto Full Stack.
-                        </p>
-
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="info-card">
-                                    <span class="info-label">Rol principal</span>
-                                    <p class="mb-0">Web Designer / Frontend Jr.</p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="info-card">
-                                    <span class="info-label">Enfoques</span>
-                                    <p class="mb-0">UI, responsive, accesibilidad</p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="info-card">
-                                    <span class="info-label">Intereses</span>
-                                    <p class="mb-0">Design systems, UX/UI, performance</p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="info-card">
-                                    <span class="info-label">Fun fact</span>
-                                    <p class="mb-0">Dog-mom de mi perrito Chewbacca</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+        <div class="row g-3">
+          <div class="col-md-3 col-sm-6">
+            <div class="skill-card">
+              <i class="fa-solid fa-code-branch skill-icon"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="skills.cards.frontend.title">Frontend</h3>
+              <p class="small mb-1" data-i18n="skills.cards.frontend.desc">HTML | CSS | Bootstrap | JS | React</p>
+              <span class="badge badge-skill" data-i18n="skills.cards.frontend.badge">Responsive & UI</span>
             </div>
-        </section>
+          </div>
 
-        <!-- HABILIDADES -->
-        <section id="skills" class="py-5 container">
-            <div class="container">
-                <h2 class="section-title text-center mb-4">Habilidades</h2>
-                <p class="text-center mb-4">
-                    Tecnologías y habilidades que utilizo en mis proyectos.
+          <div class="col-md-3 col-sm-6">
+            <div class="skill-card">
+              <i class="fa-solid fa-swatchbook skill-icon"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="skills.cards.design.title">Web Design</h3>
+              <p class="small mb-1" data-i18n="skills.cards.design.desc">Layouts | Componentes | Tipografía</p>
+              <span class="badge badge-skill" data-i18n="skills.cards.design.badge">Jerarquía visual</span>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="skill-card">
+              <i class="fa-solid fa-code skill-icon"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="skills.cards.backend.title">Backend (base)</h3>
+              <p class="small mb-1" data-i18n="skills.cards.backend.desc">Java | C# | POO</p>
+              <span class="badge badge-skill" data-i18n="skills.cards.backend.badge">Buenas prácticas</span>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="skill-card">
+              <i class="fa-solid fa-diagram-project skill-icon"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="skills.cards.tools.title">Tools</h3>
+              <p class="small mb-1" data-i18n="skills.cards.tools.desc">Git/GitHub | GitHub Pages</p>
+              <span class="badge badge-skill" data-i18n="skills.cards.tools.badge">Trabajo en equipo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="projects" class="py-5 section-alt container">
+      <div class="container">
+        <h2 class="section-title text-center mb-4" data-i18n="projects.title">Proyectos</h2>
+        <p class="text-center mb-5" data-i18n="projects.subtitle">
+          Selección de proyectos enfocados en Web Design, frontend e integración con JavaScript.
+        </p>
+
+        <div class="row g-4">
+
+          <!-- Proyecto 1: FunOnTrip -->
+          <div class="col-md-6">
+            <article class="project-card h-100">
+              <a class="project-thumb d-block mb-3"
+                href="https://angie-torres-m.github.io/E-commerce_FunOnTrip_Equipo4/" target="_blank"
+                aria-label="Abrir demo del proyecto funontrip">
+                <img src="images/funontrip.png" class="img-fluid rounded" alt="Vista previa del proyecto funontrip">
+              </a>
+
+              <div class="project-header">
+                <h3 class="h5 mb-1" data-i18n="projects.funontrip.title">FunOnTrip – E-commerce de viajes</h3>
+                <span class="badge text-bg-primary" data-i18n="projects.funontrip.badge">Equipo · Web</span>
+              </div>
+
+              <p class="small text-muted mb-2" data-i18n="projects.funontrip.p1">
+                Plataforma para explorar paquetes de viaje, con UI responsive y componentes reutilizables.
+              </p>
+
+              <p class="small mb-2">
+                <strong data-i18n="labels.role">Rol:</strong>
+                <span data-i18n="projects.funontrip.role">UI frontend (Bootstrap), responsive y documentación.</span>
+              </p>
+
+              <p class="small mb-2">
+                <strong data-i18n="labels.tech">Tecnologías:</strong>
+                <span data-i18n="projects.funontrip.tech">HTML, CSS, Bootstrap, JavaScript, Git/GitHub.</span>
+              </p>
+
+              <div id="project1-more" class="project-more d-none">
+                <p class="small mb-2">
+                  <strong data-i18n="labels.challenges">Desafíos:</strong>
+                  <span data-i18n="projects.funontrip.challenges">coordinación del equipo, manejo de ramas en Git e integración de vistas.</span>
                 </p>
-
-                <div class="row g-3">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="skill-card">
-                            <i class="fa-solid fa-code-branch skill-icon"></i>
-                            <h3 class="h6 fw-bold mb-1">Frontend</h3>
-                            <p class="small mb-1">HTML | CSS | Bootstrap | JS | React</p>
-                            <span class="badge badge-skill">Responsive & UI</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="skill-card">
-                            <i class="fa-solid fa-swatchbook skill-icon"></i>
-                            <h3 class="h6 fw-bold mb-1">Web Design</h3>
-                            <p class="small mb-1">Layouts | Componentes | Tipografía</p>
-                            <span class="badge badge-skill">Jerarquía visual</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="skill-card">
-                            <i class="fa-solid fa-code skill-icon"></i>
-                            <h3 class="h6 fw-bold mb-1">Backend (base)</h3>
-                            <p class="small mb-1">Java | C# | POO</p>
-                            <span class="badge badge-skill">Buenas prácticas</span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="skill-card">
-                            <i class="fa-solid fa-diagram-project skill-icon"></i>
-                            <h3 class="h6 fw-bold mb-1">Tools</h3>
-                            <p class="small mb-1">Git/GitHub | GitHub Pages</p>
-                            <span class="badge badge-skill">Trabajo en equipo</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROYECTOS -->
-        <section id="projects" class="py-5 section-alt container">
-            <div class="container">
-                <h2 class="section-title text-center mb-4">Proyectos</h2>
-                <p class="text-center mb-5">
-                    Selección de proyectos enfocados en Web Design, frontend e integración con JavaScript.
+                <p class="small mb-0">
+                  <strong data-i18n="labels.learn">Aprendizajes clave:</strong>
+                  <span data-i18n="projects.funontrip.learn">flujo de trabajo en equipo, consistencia visual y mantenimiento de UI.</span>
                 </p>
+              </div>
 
-                <div class="row g-4">
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas" data-target="project1-more"
+                  data-i18n="buttons.more">
+                  Ver más
+                </button>
+                <a href="https://github.com/Angie-Torres-M/E-commerce_FunOnTrip_Equipo4/tree/develop" target="_blank"
+                  class="btn btn-sm btn-outline-primary" data-i18n="buttons.github">
+                  Código en GitHub
+                </a>
+                <a href="https://angie-torres-m.github.io/E-commerce_FunOnTrip_Equipo4/" target="_blank"
+                  class="btn btn-sm btn-outline-success" data-i18n="buttons.demo">
+                  Ver demo
+                </a>
+              </div>
+            </article>
+          </div>
 
-                    <!-- Proyecto 1: FunOnTrip -->
-                    <div class="col-md-6">
-                        <article class="project-card h-100">
-                            <a class="project-thumb d-block mb-3"
-                                href="https://angie-torres-m.github.io/E-commerce_FunOnTrip_Equipo4/" target="_blank"
-                                aria-label="Abrir demo del proyecto funontrip">
-                                <img src="images/funontrip.png" class="img-fluid rounded"
-                                    alt="Vista previa del proyecto funontrip">
-                            </a>
+          <!-- Proyecto 2: Maíz Fundido -->
+          <div class="col-md-6">
+            <article class="project-card h-100">
+              <a class="project-thumb d-block mb-3" href="https://angie-torres-m.github.io/MaizFundido/" target="_blank"
+                aria-label="Abrir demo del proyecto maizfundido">
+                <img src="images/maizfunfido.png" class="img-fluid rounded" alt="Vista previa del proyecto maizfundido">
+              </a>
 
-                            <div class="project-header">
-                                <h3 class="h5 mb-1">FunOnTrip – E-commerce de viajes</h3>
-                                <span class="badge text-bg-primary">Equipo · Web</span>
-                            </div>
+              <div class="project-header">
+                <h3 class="h5 mb-1" data-i18n="projects.maiz.title">Maíz Fundido – Landing de marca</h3>
+                <span class="badge text-bg-primary" data-i18n="projects.maiz.badge">Freelance · Web</span>
+              </div>
 
-                            <p class="small text-muted mb-2">
-                                Plataforma para explorar paquetes de viaje, con UI responsive y componentes
-                                reutilizables.
-                            </p>
+              <p class="small text-muted mb-2" data-i18n="projects.maiz.p1">
+                Landing page para marca de impresión 3D, enfocada en presentación de productos y contacto.
+              </p>
 
-                            <p class="small mb-2">
-                                <strong>Rol:</strong> UI frontend (Bootstrap), responsive y documentación.
-                            </p>
+              <p class="small mb-2">
+                <strong data-i18n="labels.role">Rol:</strong>
+                <span data-i18n="projects.maiz.role">Diseño UI, maquetado y estilos responsive.</span>
+              </p>
 
-                            <p class="small mb-2">
-                                <strong>Tecnologías:</strong> HTML, CSS, Bootstrap, JavaScript, Git/GitHub.
-                            </p>
+              <p class="small mb-2">
+                <strong data-i18n="labels.tech">Tecnologías:</strong>
+                <span data-i18n="projects.maiz.tech">HTML, CSS, Bootstrap, GitHub Pages.</span>
+              </p>
 
-                            <div id="project1-more" class="project-more d-none">
-                                <p class="small mb-2">
-                                    <strong>Desafíos:</strong> coordinación del equipo, manejo de ramas en Git e
-                                    integración de vistas.
-                                </p>
-                                <p class="small mb-0">
-                                    <strong>Aprendizajes clave:</strong> flujo de trabajo en equipo, consistencia visual
-                                    y mantenimiento de UI.
-                                </p>
-                            </div>
-
-                            <div class="d-flex flex-wrap gap-2 mt-3">
-                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
-                                    data-target="project1-more">
-                                    Ver más
-                                </button>
-                                <a href="https://github.com/Angie-Torres-M/E-commerce_FunOnTrip_Equipo4/tree/develop"
-                                    target="_blank" class="btn btn-sm btn-outline-primary">
-                                    Código en GitHub
-                                </a>
-                                <a href="https://angie-torres-m.github.io/E-commerce_FunOnTrip_Equipo4/" target="_blank"
-                                    class="btn btn-sm btn-outline-success">
-                                    Ver demo
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Proyecto 2: Maíz Fundido -->
-                    <div class="col-md-6">
-                        <article class="project-card h-100">
-                            <a class="project-thumb d-block mb-3" href="https://angie-torres-m.github.io/MaizFundido/"
-                                target="_blank" aria-label="Abrir demo del proyecto maizfundido">
-                                <img src="images/maizfunfido.png" class="img-fluid rounded"
-                                    alt="Vista previa del proyecto maizfundido">
-                            </a>
-
-                            <div class="project-header">
-                                <h3 class="h5 mb-1">Maíz Fundido – Landing de marca</h3>
-                                <span class="badge text-bg-primary">Freelance · Web</span>
-                            </div>
-
-                            <p class="small text-muted mb-2">
-                                Landing page para marca de impresión 3D, enfocada en presentación de productos y
-                                contacto.
-                            </p>
-
-                            <p class="small mb-2">
-                                <strong>Rol:</strong> Diseño UI, maquetado y estilos responsive.
-                            </p>
-
-                            <p class="small mb-2">
-                                <strong>Tecnologías:</strong> HTML, CSS, Bootstrap, GitHub Pages.
-                            </p>
-
-                            <div id="project2-more" class="project-more d-none">
-                                <p class="small mb-2">
-                                    <strong>Desafíos:</strong> identidad visual coherente y jerarquía clara de
-                                    secciones.
-                                </p>
-                                <p class="small mb-0">
-                                    <strong>Aprendizajes clave:</strong> diseño centrado en el usuario, layout limpio y
-                                    optimización móvil.
-                                </p>
-                            </div>
-
-                            <div class="d-flex flex-wrap gap-2 mt-3">
-                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
-                                    data-target="project2-more">
-                                    Ver más
-                                </button>
-                                <a href="https://github.com/Angie-Torres-M/MaizFundido" target="_blank"
-                                    class="btn btn-sm btn-outline-primary">
-                                    Código en GitHub
-                                </a>
-                                <a href="https://angie-torres-m.github.io/MaizFundido/" target="_blank"
-                                    class="btn btn-sm btn-outline-success">
-                                    Ver demo
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Proyecto 3: PEACH – Conversor de temperatura -->
-                    <div class="col-md-6">
-                        <article class="project-card h-100">
-                            <a class="project-thumb d-block mb-3"
-                                href="https://angie-torres-m.github.io/PEACH_TemperatureConversion/" target="_blank"
-                                aria-label="Abrir demo del proyecto peach">
-                                <img src="images/peach.png" class="img-fluid rounded"
-                                    alt="Vista previa del proyecto peach">
-                            </a>
-
-                            <div class="project-header">
-                                <h3 class="h5 mb-1">PEACH </h3>
-                                <span class="badge text-bg-secondary">Personal · Frontend</span>
-                            </div>
-
-                            <p class="small text-muted mb-2">
-                                Aplicación web sencilla para convertir escalas de temperatura con interfaz clara.
-                            </p>
-
-                            <p class="small mb-2">
-                                <strong>Rol:</strong> UI básica y lógica de conversión.
-                            </p>
-
-                            <p class="small mb-2">
-                                <strong>Tecnologías:</strong> HTML, CSS, JavaScript.
-                            </p>
-
-                            <div id="project-peach-more" class="project-more d-none">
-                                <p class="small mb-0">
-                                    <strong>Aprendizajes clave:</strong> eventos en JS, validación simple y despliegue
-                                    en GitHub Pages.
-                                </p>
-                            </div>
-
-                            <div class="d-flex flex-wrap gap-2 mt-3">
-                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
-                                    data-target="project-peach-more">
-                                    Ver más
-                                </button>
-                                <a href="https://github.com/Angie-Torres-M/PEACH/" target="_blank"
-                                    class="btn btn-sm btn-outline-primary">
-                                    Código en GitHub
-                                </a>
-                                <a href="https://angie-torres-m.github.io/PEACH/" target="_blank"
-                                    class="btn btn-sm btn-outline-success">
-                                    Ver demo
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Proyecto 4: FakeStore API -->
-                    <div class="col-md-6">
-                        <article class="project-card h-100">
-                            <a class="project-thumb d-block mb-3"
-                                href="https://angie-torres-m.github.io/FakeStore_UsoDeAPIs/" target="_blank"
-                                aria-label="Abrir demo del proyecto fakestore">
-                                <img src="images/fakestore.png" class="img-fluid rounded"
-                                    alt="Vista previa del proyecto fakestore">
-                            </a>
-
-                            <div class="project-header">
-                                <h3 class="h5 mb-1">FakeStore API – Productos con fetch()</h3>
-                                <span class="badge text-bg-secondary">Académico · Frontend</span>
-                            </div>
-
-                            <p class="small text-muted mb-2">
-                                Sitio web que obtiene productos desde la API pública FakeStore usando
-                                <code>fetch()</code>
-                                y renderiza tarjetas dinámicas.
-                            </p>
-
-                            <p class="small mb-2">
-                                <strong>Rol:</strong> Integración API, render dinámico y estilos con Bootstrap.
-                            </p>
-
-                            <p class="small mb-2">
-                                <strong>Tecnologías:</strong> JavaScript, Fetch API, HTML, CSS, Bootstrap.
-                            </p>
-
-                            <div id="project-fakestore-more" class="project-more d-none">
-                                <p class="small mb-0">
-                                    <strong>Aprendizajes clave:</strong> promesas, async/await, DOM y estructura por
-                                    componentes con JS.
-                                </p>
-                            </div>
-
-                            <div class="d-flex flex-wrap gap-2 mt-3">
-                                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas"
-                                    data-target="project-fakestore-more">
-                                    Ver más
-                                </button>
-
-                                <a href="https://github.com/Angie-Torres-M/FakeStore_UsoDeAPIs" target="_blank"
-                                    class="btn btn-sm btn-outline-primary">
-                                    Código en GitHub
-                                </a>
-
-                                <a href="https://angie-torres-m.github.io/FakeStore_UsoDeAPIs/" target="_blank"
-                                    class="btn btn-sm btn-outline-success">
-                                    Ver demo
-                                </a>
-                            </div>
-                        </article>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- CV / RESUMEN -->
-        <section id="cv" class="py-5 container">
-            <div class="container">
-                <h2 class="section-title text-center mb-2">Resumen</h2>
-                <p class="text-center text-muted mb-5">
-                    Formación y habilidades enfocadas en frontend y web design.
+              <div id="project2-more" class="project-more d-none">
+                <p class="small mb-2">
+                  <strong data-i18n="labels.challenges">Desafíos:</strong>
+                  <span data-i18n="projects.maiz.challenges">identidad visual coherente y jerarquía clara de secciones.</span>
                 </p>
+                <p class="small mb-0">
+                  <strong data-i18n="labels.learn">Aprendizajes clave:</strong>
+                  <span data-i18n="projects.maiz.learn">diseño centrado en el usuario, layout limpio y optimización móvil.</span>
+                </p>
+              </div>
 
-                <div class="row g-4 justify-content-center cv-wrap">
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas" data-target="project2-more"
+                  data-i18n="buttons.more">
+                  Ver más
+                </button>
+                <a href="https://github.com/Angie-Torres-M/MaizFundido" target="_blank"
+                  class="btn btn-sm btn-outline-primary" data-i18n="buttons.github">
+                  Código en GitHub
+                </a>
+                <a href="https://angie-torres-m.github.io/MaizFundido/" target="_blank"
+                  class="btn btn-sm btn-outline-success" data-i18n="buttons.demo">
+                  Ver demo
+                </a>
+              </div>
+            </article>
+          </div>
 
-                    <!-- FORMACIÓN -->
-                    <div class="col-lg-6">
-                        <h3 class="h5 mb-3">Formación</h3>
+          <!-- Proyecto 3: PEACH – Conversor de temperatura -->
+          <div class="col-md-6">
+            <article class="project-card h-100">
+              <a class="project-thumb d-block mb-3" href="https://angie-torres-m.github.io/PEACH_TemperatureConversion/"
+                target="_blank" aria-label="Abrir demo del proyecto peach">
+                <img src="images/peach.png" class="img-fluid rounded" alt="Vista previa del proyecto peach">
+              </a>
 
-                        <div class="cv-card mb-3">
-                            <h4 class="h6 mb-1">Bootcamp Full Stack Java</h4>
-                            <p class="small text-muted mb-1">Generation México · 2025</p>
-                            <p class="small mb-0">
-                                Full Stack con Java + desarrollo web (HTML, CSS, JS). Git/GitHub y trabajo en equipo.
-                            </p>
-                        </div>
+              <div class="project-header">
+                <h3 class="h5 mb-1" data-i18n="projects.peach.title">PEACH</h3>
+                <span class="badge text-bg-secondary" data-i18n="projects.peach.badge">Personal · Frontend</span>
+              </div>
 
-                        <div class="cv-card mb-3">
-                            <h4 class="h6 mb-1">Curso de Desarrollo Web (Junior)</h4>
-                            <p class="small text-muted mb-1">Mujer Digital · 2024</p>
-                            <p class="small mb-0">
-                                Frontend (HTML, CSS, Bootstrap, JavaScript) con proyectos web funcionales.
-                            </p>
-                        </div>
+              <p class="small text-muted mb-2" data-i18n="projects.peach.p1">
+                Aplicación web sencilla para convertir escalas de temperatura con interfaz clara.
+              </p>
 
-                        <div class="cv-card mb-3 cv-card-muted">
-                            <h4 class="h6 mb-1">Curso de Python · 2022</h4>
-                            <p class="small text-muted mb-0">Conectadas by IYF</p>
-                        </div>
+              <p class="small mb-2">
+                <strong data-i18n="labels.role">Rol:</strong>
+                <span data-i18n="projects.peach.role">UI básica y lógica de conversión.</span>
+              </p>
 
-                        <div class="cv-card cv-card-muted mb-2">
-                            <h4 class="h6 mb-1">Maestría · UNAM</h4>
-                            <p class="small text-muted mb-0">Formación académica previa (UNAM)</p>
-                        </div>
+              <p class="small mb-2">
+                <strong data-i18n="labels.tech">Tecnologías:</strong>
+                <span data-i18n="projects.peach.tech">HTML, CSS, JavaScript.</span>
+              </p>
 
-                        <div class="cv-card cv-card-muted">
-                            <h4 class="h6 mb-1">Biología · UNAM</h4>
-                            <p class="small text-muted mb-0">Formación académica previa (UNAM)</p>
-                        </div>
-                    </div>
+              <div id="project-peach-more" class="project-more d-none">
+                <p class="small mb-0">
+                  <strong data-i18n="labels.learn">Aprendizajes clave:</strong>
+                  <span data-i18n="projects.peach.learn">eventos en JS, validación simple y despliegue en GitHub Pages.</span>
+                </p>
+              </div>
 
-                    <!-- HABILIDADES -->
-                    <div class="col-lg-6">
-                        <h3 class="h5 mb-3">Habilidades destacadas</h3>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas" data-target="project-peach-more"
+                  data-i18n="buttons.more">
+                  Ver más
+                </button>
+                <a href="https://github.com/Angie-Torres-M/PEACH/" target="_blank"
+                  class="btn btn-sm btn-outline-primary" data-i18n="buttons.github">
+                  Código en GitHub
+                </a>
+                <a href="https://angie-torres-m.github.io/PEACH/" target="_blank" class="btn btn-sm btn-outline-success"
+                  data-i18n="buttons.demo">
+                  Ver demo
+                </a>
+              </div>
+            </article>
+          </div>
 
-                        <div class="row g-3">
-                            <!-- Frontend -->
-                            <div class="col-sm-6">
-                                <div class="skill-box h-100">
-                                    <h4 class="h6 mb-2">Frontend</h4>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge rounded-pill text-bg-secondary">HTML</span>
-                                        <span class="badge rounded-pill text-bg-secondary">CSS</span>
-                                        <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
-                                        <span class="badge rounded-pill text-bg-secondary">JavaScript</span>
-                                        <span class="badge rounded-pill text-bg-secondary">React</span>
-                                        <span class="badge rounded-pill text-bg-secondary">Mobile-first</span>
-                                    </div>
-                                </div>
-                            </div>
+          <!-- Proyecto 4: FakeStore API -->
+          <div class="col-md-6">
+            <article class="project-card h-100">
+              <a class="project-thumb d-block mb-3" href="https://angie-torres-m.github.io/FakeStore_UsoDeAPIs/"
+                target="_blank" aria-label="Abrir demo del proyecto fakestore">
+                <img src="images/fakestore.png" class="img-fluid rounded" alt="Vista previa del proyecto fakestore">
+              </a>
 
-                            <!-- Web & Tools -->
-                            <div class="col-sm-6">
-                                <div class="skill-box h-100">
-                                    <h4 class="h6 mb-2">Web & Tools</h4>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge rounded-pill text-bg-secondary">Fetch API</span>
-                                        <span class="badge rounded-pill text-bg-secondary">DOM</span>
-                                        <span class="badge rounded-pill text-bg-secondary">Git</span>
-                                        <span class="badge rounded-pill text-bg-secondary">GitHub</span>
-                                        <span class="badge rounded-pill text-bg-secondary">GitHub Pages</span>
-                                    </div>
-                                </div>
-                            </div>
+              <div class="project-header">
+                <h3 class="h5 mb-1" data-i18n="projects.fakestore.title">FakeStore API – Productos con fetch()</h3>
+                <span class="badge text-bg-secondary" data-i18n="projects.fakestore.badge">Académico · Frontend</span>
+              </div>
 
-                            <!-- Trabajo -->
-                            <div class="col-sm-6">
-                                <div class="skill-box h-100">
-                                    <h4 class="h6 mb-2">Power skills</h4>
-                                    <div class="d-flex flex-wrap gap-2">
-                                        <span class="badge rounded-pill text-bg-secondary">Comunicación empática</span>
-                                        <span class="badge rounded-pill text-bg-secondary">Colaboración ágil</span>
+              <p class="small text-muted mb-2" data-i18n="projects.fakestore.p1">
+                Sitio web que obtiene productos desde la API pública FakeStore usando <code>fetch()</code> y renderiza
+                tarjetas dinámicas.
+              </p>
 
-                                        <span class="badge rounded-pill text-bg-secondary">Documentación técnica</span>
-                                    </div>
-                                </div>
-                            </div>
+              <p class="small mb-2">
+                <strong data-i18n="labels.role">Rol:</strong>
+                <span data-i18n="projects.fakestore.role">Integración API, render dinámico y estilos con Bootstrap.</span>
+              </p>
 
-                            <div class="col-sm-6">
-                                <div class="skill-box h-100 skill-box-action">
-                                    <a href="Doc/CV_AngelicaTorres_DS.pdf" target="_blank"
-                                        class="btn btn-outline-primary">
-                                        Descargar CV en PDF
-                                    </a>
-                                </div>
-                            </div>
+              <p class="small mb-2">
+                <strong data-i18n="labels.tech">Tecnologías:</strong>
+                <span data-i18n="projects.fakestore.tech">JavaScript, Fetch API, HTML, CSS, Bootstrap.</span>
+              </p>
 
+              <div id="project-fakestore-more" class="project-more d-none">
+                <p class="small mb-0">
+                  <strong data-i18n="labels.learn">Aprendizajes clave:</strong>
+                  <span data-i18n="projects.fakestore.learn">promesas, async/await, DOM y estructura por componentes con JS.</span>
+                </p>
+              </div>
 
-                        </div>
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <button class="btn btn-sm btn-outline-secondary" data-toggle="ver-mas" data-target="project-fakestore-more"
+                  data-i18n="buttons.more">
+                  Ver más
+                </button>
 
-                    </div>
-                </div>
-        </section>
+                <a href="https://github.com/Angie-Torres-M/FakeStore_UsoDeAPIs" target="_blank"
+                  class="btn btn-sm btn-outline-primary" data-i18n="buttons.github">
+                  Código en GitHub
+                </a>
 
+                <a href="https://angie-torres-m.github.io/FakeStore_UsoDeAPIs/" target="_blank"
+                  class="btn btn-sm btn-outline-success" data-i18n="buttons.demo">
+                  Ver demo
+                </a>
+              </div>
+            </article>
+          </div>
 
-        <!-- BLOG -->
+        </div>
+      </div>
+    </section>
 
-        <section id="blog" class="py-5 section-alt container">
-            <div class="container">
-                <h2 class="section-title text-center mb-4">Blog</h2>
+    <!-- CV / RESUMEN -->
+    <section id="cv" class="py-5 container">
+      <div class="container">
+        <h2 class="section-title text-center mb-2" data-i18n="cv.title">Resumen</h2>
+        <p class="text-center text-muted mb-5" data-i18n="cv.subtitle">
+          Formación y habilidades enfocadas en frontend y web design.
+        </p>
 
-                <article class="blog-card">
-                    <h3 class="h5 mb-1">Cómo pasé de aprender a programar a diseñar experiencias web</h3>
-                    <p class="small text-muted mb-2">Reflexión profesional · 2025</p>
+        <div class="row g-4 justify-content-center cv-wrap">
 
-                    <p class="mb-2">
-                        Mi camino en tecnología no empezó con un plan perfecto, sino con curiosidad.
-                        Al aprender a programar descubrí que lo que más me motivaba no era solo que el código
-                        funcionara,
-                        sino cómo se sentía usar lo que construía.
-                    </p>
+          <!-- FORMACIÓN -->
+          <div class="col-lg-6">
+            <h3 class="h5 mb-3" data-i18n="cv.education.title">Formación</h3>
 
-                    <div id="blog1-more" class="blog-more d-none">
-                        <p class="mb-2">
-                            Con el tiempo fui enfocando mi perfil hacia frontend y web design,
-                            trabajando con HTML, CSS, Bootstrap y JavaScript en proyectos desplegados en GitHub Pages.
-                            Ahí entendí la importancia de la jerarquía visual, la consistencia y el diseño responsive.
-                        </p>
-                        <p class="mb-0">
-                            Hoy busco crecer como Web Designer / Frontend Developer,
-                            participando en equipos donde diseño y código se combinan para crear
-                            experiencias claras, útiles y pensadas para personas reales.
-                        </p>
-                    </div>
-
-                    <div class="d-flex justify-content-end">
-                        <button class="btn btn-sm btn-outline-secondary mt-2" data-toggle="ver-mas"
-                            data-target="blog1-more">
-                            Ver más
-                        </button>
-                    </div>
-                </article>
+            <div class="cv-card mb-3">
+              <h4 class="h6 mb-1" data-i18n="cv.education.items.bootcamp.title">Bootcamp Full Stack Java</h4>
+              <p class="small text-muted mb-1" data-i18n="cv.education.items.bootcamp.meta">Generation México · 2025</p>
+              <p class="small mb-0" data-i18n="cv.education.items.bootcamp.desc">
+                Full Stack con Java + desarrollo web (HTML, CSS, JS). Git/GitHub y trabajo en equipo.
+              </p>
             </div>
-        </section>
 
+            <div class="cv-card mb-3">
+              <h4 class="h6 mb-1" data-i18n="cv.education.items.webcourse.title">Curso de Desarrollo Web (Junior)</h4>
+              <p class="small text-muted mb-1" data-i18n="cv.education.items.webcourse.meta">Mujer Digital · 2024</p>
+              <p class="small mb-0" data-i18n="cv.education.items.webcourse.desc">
+                Frontend (HTML, CSS, Bootstrap, JavaScript) con proyectos web funcionales.
+              </p>
+            </div>
 
-    </main>
+            <div class="cv-card mb-3 cv-card-muted">
+              <h4 class="h6 mb-1" data-i18n="cv.education.items.python.title">Curso de Python · 2022</h4>
+              <p class="small text-muted mb-0" data-i18n="cv.education.items.python.meta">Conectadas by IYF</p>
+            </div>
 
+            <div class="cv-card cv-card-muted mb-2">
+              <h4 class="h6 mb-1" data-i18n="cv.education.items.masters.title">Maestría · UNAM</h4>
+              <p class="small text-muted mb-0" data-i18n="cv.education.items.masters.meta">Formación académica previa (UNAM)</p>
+            </div>
 
-    <!-- FOOTER -->
-    <footer id="site-footer"></footer>
+            <div class="cv-card cv-card-muted">
+              <h4 class="h6 mb-1" data-i18n="cv.education.items.bio.title">Biología · UNAM</h4>
+              <p class="small text-muted mb-0" data-i18n="cv.education.items.bio.meta">Formación académica previa (UNAM)</p>
+            </div>
+          </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+          <!-- HABILIDADES -->
+          <div class="col-lg-6">
+            <h3 class="h5 mb-3" data-i18n="cv.skills.title">Habilidades destacadas</h3>
 
-    <!-- Tu JS -->
-    <script src="./JS/main.js"></script>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div class="skill-box h-100">
+                  <h4 class="h6 mb-2" data-i18n="cv.skills.blocks.frontend.title">Frontend</h4>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge rounded-pill text-bg-secondary">HTML</span>
+                    <span class="badge rounded-pill text-bg-secondary">CSS</span>
+                    <span class="badge rounded-pill text-bg-secondary">Bootstrap</span>
+                    <span class="badge rounded-pill text-bg-secondary">JavaScript</span>
+                    <span class="badge rounded-pill text-bg-secondary">React</span>
+                    <span class="badge rounded-pill text-bg-secondary" data-i18n="cv.skills.blocks.frontend.mobile">Mobile-first</span>
+                  </div>
+                </div>
+              </div>
 
+              <div class="col-sm-6">
+                <div class="skill-box h-100">
+                  <h4 class="h6 mb-2" data-i18n="cv.skills.blocks.tools.title">Web & Tools</h4>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge rounded-pill text-bg-secondary">Fetch API</span>
+                    <span class="badge rounded-pill text-bg-secondary">DOM</span>
+                    <span class="badge rounded-pill text-bg-secondary">Git</span>
+                    <span class="badge rounded-pill text-bg-secondary">GitHub</span>
+                    <span class="badge rounded-pill text-bg-secondary">GitHub Pages</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="skill-box h-100">
+                  <h4 class="h6 mb-2" data-i18n="cv.skills.blocks.power.title">Power skills</h4>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge rounded-pill text-bg-secondary" data-i18n="cv.skills.blocks.power.comm">Comunicación empática</span>
+                    <span class="badge rounded-pill text-bg-secondary" data-i18n="cv.skills.blocks.power.agile">Colaboración ágil</span>
+                    <span class="badge rounded-pill text-bg-secondary" data-i18n="cv.skills.blocks.power.docs">Documentación técnica</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <div class="skill-box h-100 skill-box-action">
+                  <a href="Doc/CV_AngelicaTorres_DS.pdf" target="_blank" class="btn btn-outline-primary"
+                    data-i18n="cv.download">
+                    Descargar CV en PDF
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="py-5 section-alt container">
+      <div class="container">
+        <h2 class="section-title text-center mb-4" data-i18n="blog.title">Blog</h2>
+
+        <article class="blog-card">
+          <h3 class="h5 mb-1" data-i18n="blog.post1.title">Cómo pasé de aprender a programar a diseñar experiencias web</h3>
+          <p class="small text-muted mb-2" data-i18n="blog.post1.meta">Reflexión profesional · 2025</p>
+
+          <p class="mb-2" data-i18n="blog.post1.p1">
+            Mi camino en tecnología no empezó con un plan perfecto, sino con curiosidad.
+            Al aprender a programar descubrí que lo que más me motivaba no era solo que el código funcionara,
+            sino cómo se sentía usar lo que construía.
+          </p>
+
+          <div id="blog1-more" class="blog-more d-none">
+            <p class="mb-2" data-i18n="blog.post1.p2">
+              Con el tiempo fui enfocando mi perfil hacia frontend y web design,
+              trabajando con HTML, CSS, Bootstrap y JavaScript en proyectos desplegados en GitHub Pages.
+              Ahí entendí la importancia de la jerarquía visual, la consistencia y el diseño responsive.
+            </p>
+            <p class="mb-0" data-i18n="blog.post1.p3">
+              Hoy busco crecer como Web Designer / Frontend Developer,
+              participando en equipos donde diseño y código se combinan para crear
+              experiencias claras, útiles y pensadas para personas reales.
+            </p>
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button class="btn btn-sm btn-outline-secondary mt-2" data-toggle="ver-mas" data-target="blog1-more"
+              data-i18n="buttons.more">
+              Ver más
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- i18n (primero diccionario, luego motor) -->
+  <script src="./JS/translations.js"></script>
+  <script src="./JS/i18n.js"></script>
+
+  <!-- Tu JS global -->
+  <script src="./JS/main.js"></script>
 </body>
 
 </html>

@@ -1,53 +1,48 @@
 // ======================================================
 // main.js - Lógica global del portafolio
-// Angie del futuro:
 // - Inyecta header.html y footer.html
 // - Controla tema claro/oscuro (desktop + móvil)
-// - Maneja "Ver más / Ver menos"
+// - Maneja "Ver más / Ver menos" (TRADUCIBLE)
 // - Activa menú hamburguesa en móvil
+// - Re-aplica i18n después de inyectar header/footer
 // ======================================================
 
-
-// ==============================
-// 0. Inicialización global
-// ==============================
 document.addEventListener("DOMContentLoaded", async () => {
-  console.log("DOM listo");
-
-  // 1) Inyectar header y footer primero (así los elementos existen en el DOM)
+  // 1) Inyectar header y footer
   await includeHTML("#site-header", "./header.html");
   await includeHTML("#site-footer", "./footer.html");
-  console.log("Header y footer cargados");
 
-  // 2) Ahora que header/footer YA existen:
-  initTheme();         // aplicar tema guardado
-  initThemeButtons();  // conectar botones (desktop + móvil)
-  initHeader();        // activar menú hamburguesa en móvil
-  initVerMasButtons(); // botones "Ver más / Ver menos"
+  // 2) Init features (ahora sí existen botones del header)
+  initTheme();
+  initThemeButtons();
+  initHeader();
+
+  // 3) Re-aplicar i18n (porque header/footer se inyectaron después)
+  refreshI18n();
+
+  // 4) Ver más/menos (después de i18n para tomar labels correctas)
+  initVerMasButtons();
 });
 
 // ==============================
-// 1. Incluir fragmentos HTML (header y footer)
+// Include HTML fragments
 // ==============================
 async function includeHTML(selector, url) {
   const host = document.querySelector(selector);
   if (!host) return;
 
-  const res = await fetch(url, { cache: "no-cache" });
-  if (!res.ok) {
-    console.error(`No se pudo cargar ${url}`);
-    return;
+  try {
+    const res = await fetch(url, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`HTTP ${res.status} al cargar ${url}`);
+    host.innerHTML = await res.text();
+  } catch (err) {
+    console.error(`No se pudo cargar ${url}:`, err);
   }
-
-  host.innerHTML = await res.text();
 }
 
-
 // ==============================
-// 2. Tema claro / oscuro
+// Theme
 // ==============================
-
-// Aplica el tema guardado o "light" por defecto
 function initTheme() {
   const root = document.documentElement;
   const savedTheme = localStorage.getItem("preferredTheme");
@@ -57,34 +52,33 @@ function initTheme() {
   updateThemeToggleText(currentTheme);
 }
 
-// Actualiza icono y texto de TODOS los botones de tema
 function updateThemeToggleText(theme) {
-  // Botón de desktop (hero) y botón de móvil (header)
   const buttons = document.querySelectorAll("#theme-toggle, #theme-toggle-mobile");
 
   buttons.forEach((toggleBtn) => {
-    if (!toggleBtn) return;
-
-    const icon = toggleBtn.querySelector("i");
-    const textSpan = toggleBtn.querySelector("span"); // solo existe en desktop
-
+    const icon = toggleBtn?.querySelector("i");
+    const textSpan = toggleBtn?.querySelector("span"); // solo existe en desktop
     if (!icon) return;
 
+    // Texto traducible desde translations
+    const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
+    const darkLabel = getT(lang, "theme.dark") ?? (lang === "en" ? "Dark mode" : "Modo oscuro");
+    const lightLabel = getT(lang, "theme.light") ?? (lang === "en" ? "Light mode" : "Modo claro");
+
     if (theme === "dark") {
-      // icono sol
       icon.classList.remove("fa-moon");
       icon.classList.add("fa-sun");
-      if (textSpan) textSpan.textContent = "Modo claro";
+      if (textSpan) textSpan.textContent = lightLabel;
+      toggleBtn.setAttribute("aria-label", lightLabel);
     } else {
-      // icono luna
       icon.classList.remove("fa-sun");
       icon.classList.add("fa-moon");
-      if (textSpan) textSpan.textContent = "Modo oscuro";
+      if (textSpan) textSpan.textContent = darkLabel;
+      toggleBtn.setAttribute("aria-label", darkLabel);
     }
   });
 }
 
-// Alterna tema y actualiza todos los botones
 function toggleTheme() {
   const root = document.documentElement;
   const current = root.getAttribute("data-bs-theme") || "light";
@@ -95,33 +89,40 @@ function toggleTheme() {
   updateThemeToggleText(next);
 }
 
-// Conectar listeners a los botones de tema
 function initThemeButtons() {
-  const btnDesktop = document.getElementById("theme-toggle");          // hero
-  const btnMobile  = document.getElementById("theme-toggle-mobile");   // header
+  const btnDesktop = document.getElementById("theme-toggle");
+  const btnMobile = document.getElementById("theme-toggle-mobile");
 
-  if (btnDesktop) btnDesktop.addEventListener("click", toggleTheme);
-  if (btnMobile)  btnMobile.addEventListener("click", toggleTheme);
-}
+  if (btnDesktop && !btnDesktop.dataset.bound) {
+    btnDesktop.addEventListener("click", toggleTheme);
+    btnDesktop.dataset.bound = "true";
+  }
 
-
-// ==============================
-// Header: SOLO menú hamburguesa
-// ==============================
-function initHeader() {
-  const toggle = document.getElementById("navToggle");
-  const menu   = document.getElementById("navMenu");
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("active");
-    });
+  if (btnMobile && !btnMobile.dataset.bound) {
+    btnMobile.addEventListener("click", toggleTheme);
+    btnMobile.dataset.bound = "true";
   }
 }
 
+// ==============================
+// Header menu (hamburger)
+// ==============================
+function initHeader() {
+  const toggle = document.getElementById("navToggle");
+  const menu = document.getElementById("navMenu");
+
+  if (toggle && menu && !toggle.dataset.bound) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      const isOpen = menu.classList.contains("active");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    toggle.dataset.bound = "true";
+  }
+}
 
 // ==============================
-// 4. Ver más / Ver menos
+// Ver más / Ver menos (traducible)
 // ==============================
 function initVerMasButtons() {
   const buttons = document.querySelectorAll('[data-toggle="ver-mas"]');
@@ -131,22 +132,52 @@ function initVerMasButtons() {
     const target = document.getElementById(targetId);
     if (!target) return;
 
+    if (btn.dataset.bound) return;
+
     btn.addEventListener("click", () => {
+      const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
+      const labelMore = getT(lang, "buttons.more") ?? (lang === "en" ? "Show more" : "Ver más");
+      const labelLess = getT(lang, "buttons.less") ?? (lang === "en" ? "Show less" : "Ver menos");
+
       const isHidden = target.classList.contains("d-none");
 
       if (isHidden) {
         target.classList.remove("d-none");
-        btn.textContent = "Ver menos";
+        btn.textContent = labelLess;
       } else {
         target.classList.add("d-none");
-        // Si el botón originalmente decía "Leer más", respetamos eso
-        btn.textContent = btn.textContent.toLowerCase().includes("leer")
-          ? "Leer más"
-          : "Ver más";
+        btn.textContent = labelMore;
       }
     });
+
+    btn.dataset.bound = "true";
   });
 }
 
+// ==============================
+// i18n refresh after injecting header/footer
+// ==============================
+function refreshI18n() {
+  const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
 
+  if (typeof applyLanguage === "function") {
+    applyLanguage(lang);
+    // también re-sincroniza texto del botón de tema
+    const theme = document.documentElement.getAttribute("data-bs-theme") || "light";
+    updateThemeToggleText(theme);
+    return;
+  }
 
+  document.dispatchEvent(new CustomEvent("i18n:refresh", { detail: { lang } }));
+}
+
+// ==============================
+// helper: get translation by path
+// ==============================
+function getT(lang, path) {
+  try {
+    return path.split(".").reduce((acc, k) => acc?.[k], translations?.[lang]);
+  } catch {
+    return undefined;
+  }
+}

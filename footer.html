@@ -16,14 +16,15 @@
 </head>
 
 <body>
+    <!-- FOOTER (fragmento) -->
     <section class="footer">
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center text-center text-md-center g-3">
 
-                    <!-- LOGO (solo en md en adelante) -->
+                    <!-- Logo (solo md+) -->
                     <div class="col-12 col-md-2 d-none d-md-block">
-                        <a href="./index.html" class="logo-link">
+                        <a href="./index.html" class="logo-link" aria-label="Ir a inicio">
                             <img src="./images/logoChewieLightMode.png" class="logo logo-light"
                                 alt="Logo Chewie modo claro" style="width: 50px;">
                             <img src="./images/logoChewieDarkMode.png" class="logo logo-dark"
@@ -31,17 +32,18 @@
                         </a>
                     </div>
 
-                    <!-- CONTACTO + REDES (ocupa el centro) -->
+                    <!-- Contacto + redes -->
                     <div class="col-12 col-md-8">
-                        <!-- CONTACTO / FOOTER RÁPIDO -->
                         <section id="contact">
                             <div>
-                                <h2 class="h5 mb-2">Contacto</h2>
-                                <p class="mb-2">
+                                <h2 class="h5 mb-2" data-i18n="footer.title">Contacto</h2>
+
+                                <p class="mb-2" data-i18n="footer.p1">
                                     ¿Te gustaría colaborar o tienes alguna vacante que encaje con mi perfil?
                                 </p>
+
                                 <p class="mb-2">
-                                    Escríbeme a:
+                                    <span data-i18n="footer.emailLabel">Escríbeme a:</span>
                                     <a href="mailto:angelica.m.torres.morales@gmail.com">
                                         angelica.m.torres.morales@gmail.com
                                     </a>
@@ -49,35 +51,34 @@
                             </div>
                         </section>
 
-                        <!-- REDES -->
                         <div class="nav-social d-flex gap-2 align-items-center justify-content-center mt-2">
-                            <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="social-link">
+                            <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="social-link"
+                                aria-label="LinkedIn">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
-                            <a href="https://github.com/Angie-Torres-M" target="_blank" class="social-link">
+                            <a href="https://github.com/Angie-Torres-M" target="_blank" class="social-link"
+                                aria-label="GitHub">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
                     </div>
 
-                    <!-- BOTÓN VER CV (a la derecha en desktop, abajo en móvil) -->
+                    <!-- Botón CV -->
                     <div class="col-12 col-md-2 d-flex justify-content-center justify-content-md-center">
-                        <a href="#cv" class="btn btn-outline-primary">
-                            Ver CV
-                        </a>
+                        <a href="#cv" class="btn btn-outline-primary" data-i18n="footer.cvBtn">Ver CV</a>
                     </div>
 
                 </div>
 
-                <!-- TEXTO INFERIOR TURQUESA -->
                 <div class="footer-bottom text-center mt-3">
-                    <span style="color:#5DC1B9;">
+                    <span style="color:#5DC1B9;" data-i18n="footer.copyright">
                         © 2025 Angie Torres. Todos los derechos reservados. Ciudad de México
                     </span>
                 </div>
             </div>
         </footer>
     </section>
+
 
 
 

@@ -32,58 +32,52 @@
 </head>
 
 <body>
-
-    <section class="header-fijo  mx-auto ">
-        <header  >
-            <!-- NAVBAR -->
+    <!-- HEADER (fragmento) -->
+    <section class="header-fijo mx-auto">
+        <header>
             <nav class="angie-navbar">
                 <div class="nav-container">
 
-                    <!-- Logo  -->
-                    <a href="./index.html" class="logo-link">
-                        <!-- Logo para modo CLARO -->
+                    <!-- Logo -->
+                    <a href="./index.html" class="logo-link" aria-label="Ir a inicio">
                         <img src="./images/logoChewieLightMode.png" class="logo logo-light" alt="Logo Chewie modo claro"
                             style="width: 50px;">
-
-                        <!-- Logo para modo OSCURO -->
                         <img src="./images/logoChewieDarkMode.png" class="logo logo-dark" alt="Logo Chewie modo oscuro"
                             style="width: 50px;">
                     </a>
 
-                    
-                    <!-- Botón modo oscuro y claro (solo visible en móvil) -->
-                    <button id="theme-toggle-mobile" id="navBtn" class="btn btn-outline-secondary btn-sm d-md-none">
+                    <!-- Botón modo oscuro/claro (solo móvil) -->
+                    <button id="theme-toggle-mobile" class="btn btn-outline-secondary btn-sm d-md-none"
+                        aria-label="Cambiar tema">
                         <i class="fa-solid fa-moon"></i>
                     </button>
 
                     <!-- Botón hamburguesa -->
-                    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
                         ☰
                     </button>
 
-                    <!-- Menú (navMenu se controla con JS) -->
+                    <!-- Menú -->
                     <div class="nav-menu" id="navMenu">
                         <ul class="nav-links">
-                            <li><a href="#hero">Acerca de mi</a></li>
-                            <li><a href="#skills">Habilidades</a></li>
-                            <li><a href="#projects">Proyectos</a></li>
-                            <li><a href="#cv">Resumen</a></li>
-                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#about" data-i18n="nav.about">Acerca de mí</a></li>
+                            <li><a href="#skills" data-i18n="nav.skills">Habilidades</a></li>
+                            <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+                            <li><a href="#cv" data-i18n="nav.cv">Resumen</a></li>
+                            <li><a href="#blog" data-i18n="nav.blog">Blog</a></li>
                         </ul>
 
-
-
-
                         <div class="nav-social" id="navSocial">
-                            <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="social-link">
+                            <a href="https://www.linkedin.com/in/tu-linkedin" target="_blank" class="social-link"
+                                aria-label="LinkedIn">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
-                            <a href="https://github.com/Angie-Torres-M" target="_blank" class="social-link">
+                            <a href="https://github.com/Angie-Torres-M" target="_blank" class="social-link"
+                                aria-label="GitHub">
                                 <i class="fa-brands fa-github"></i>
                             </a>
                         </div>
                     </div>
-
 
                 </div>
             </nav>
@@ -91,7 +85,8 @@
             <div class="header-separador" id="headerSeparador"></div>
         </header>
     </section>
- 
+
+
 
     <script type="module" src="/JS/main.js"></script>
 

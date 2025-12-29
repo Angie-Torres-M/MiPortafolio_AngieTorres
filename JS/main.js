@@ -160,12 +160,12 @@ function initVerMasButtons() {
 function refreshI18n() {
   const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
 
-  if (typeof applyLanguage === "function") {
-    applyLanguage(lang);
-    // también re-sincroniza texto del botón de tema
-    const theme = document.documentElement.getAttribute("data-bs-theme") || "light";
-    updateThemeToggleText(theme);
-    return;
+  if (typeof window.applyLanguage === "function") {
+    window.applyLanguage(lang);
+  }
+
+  if (typeof window.bindLangToggle === "function") {
+    window.bindLangToggle();
   }
 
   document.dispatchEvent(new CustomEvent("i18n:refresh", { detail: { lang } }));

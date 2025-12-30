@@ -14,7 +14,12 @@
         <button id="theme-toggle-mobile" class="btn btn-outline-secondary btn-sm d-md-none" aria-label="Cambiar tema">
           <i class="fa-solid fa-moon"></i>
         </button>
-
+  <!-- SWITCH IDIOMA -->
+  <button id="lang-toggle" class="lang-switch  btn-sm d-md-none" type="button" aria-label="Cambiar idioma">
+    <span class="lang-pill" aria-hidden="true"></span>
+    <span class="lang-text lang-left">ES</span>
+    <span class="lang-text lang-right">EN</span>
+  </button>
         <!-- Botón hamburguesa -->
         <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
           ☰
@@ -40,17 +45,25 @@
           </div>
         </div>
 
-        <!-- Controles desktop (en el header) -->
-        <div class="d-none d-md-flex gap-2 align-items-center">
-          <button id="lang-toggle" class="btn btn-outline-primary btn-sm">
-            ES / EN
-          </button>
+       <!-- Controles idioma + tema (visible en TODOS los tamaños) -->
+<div class="d-flex align-items-center gap-2">
 
-          <button id="theme-toggle" class="btn btn-outline-secondary btn-sm d-md-inline-flex">
-            <i class="fa-solid fa-moon me-1"></i>
-            <span data-i18n="theme.dark">Modo oscuro</span>
-          </button>
-        </div>
+  <!-- SWITCH IDIOMA -->
+  <button id="lang-toggle" class="lang-switch btn-sm d-none d-md-inline-flex" type="button" aria-label="Cambiar idioma">
+    <span class="lang-pill" aria-hidden="true"></span>
+    <span class="lang-text lang-left">ES</span>
+    <span class="lang-text lang-right">EN</span>
+  </button>
+
+  <!-- TEMA (tu botón normal) -->
+  <button id="theme-toggle" class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
+    <i class="fa-solid fa-moon me-1"></i>
+    <span data-i18n="theme.dark">Modo oscuro</span>
+  </button>
+
+</div>
+
+
 
       </div>
     </nav>

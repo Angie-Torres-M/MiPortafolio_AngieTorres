@@ -25,7 +25,12 @@ function applyLanguage(lang) {
 
   // Actualiza etiqueta del botón (si existe)
   const btn = document.getElementById("lang-toggle");
-  if (btn) btn.textContent = lang === "es" ? "ES / EN" : "EN / ES";
+  if (btn) {
+    // estado visual del switch
+    btn.classList.toggle("is-en", lang === "en");
+  }
+
+
 }
 
 // Conecta el botón de idioma (y evita listeners duplicados)

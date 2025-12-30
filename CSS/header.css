@@ -211,6 +211,61 @@ main {
     margin-top: 50px; /* o el valor que necesites */
   }
 }
+/* ===== Switch idioma (ES/EN) ===== */
+.lang-switch{
+  position: relative;
+  width: 84px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(108,117,125,.5);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.lang-switch:focus{
+  outline: none;
+  box-shadow: 0 0 0 .25rem rgba(93,193,185,.25);
+}
+
+/* la “pastillita” que se desliza */
+.lang-pill{
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 36px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--accent-color);
+  transition: transform .2s ease;
+}
+
+/* textos */
+.lang-text{
+  position: relative;
+  z-index: 1;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  opacity: .85;
+}
+
+/* cuando está EN activo */
+.lang-switch.is-en .lang-pill{
+  transform: translateX(40px);
+}
+
+.lang-switch.is-en .lang-left{ opacity: .55; }
+.lang-switch:not(.is-en) .lang-right{ opacity: .55; }
+
+/* en modo oscuro ajusta bordes */
+html[data-bs-theme="dark"] .lang-switch{
+  border-color: rgba(255,255,255,.2);
+}
 
 /* ======================================
    8. RESPONSIVE (MÓVILES / TABLETS)

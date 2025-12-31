@@ -104,9 +104,9 @@ function initThemeButtons() {
   }
 }
 
-// ==============================
-// Header menu (hamburger)
-// ==============================
+
+// Header menu (hamburguesa)
+
 function initHeader() {
   const toggle = document.getElementById("navToggle");
   const menu = document.getElementById("navMenu");
@@ -121,9 +121,9 @@ function initHeader() {
   }
 }
 
-// ==============================
+
 // Ver más / Ver menos (traducible)
-// ==============================
+
 function initVerMasButtons() {
   const buttons = document.querySelectorAll('[data-toggle="ver-mas"]');
 

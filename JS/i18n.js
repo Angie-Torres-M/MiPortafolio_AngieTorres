@@ -2,71 +2,73 @@
 const DEFAULT_LANG = "es";
 
 function getNestedTranslation(obj, path) {
-  return path.split(".").reduce((acc, key) => acc?.[key], obj);
+  return path.split(".").reduce((acc, key) => (acc ? acc[key] : undefined), obj);
 }
 
-// Exponemos applyLanguage para que main.js pueda llamarlo tras inyectar header/footer
 function applyLanguage(lang) {
-  if (!translations?.[lang]) return;
+  // translations viene de translations.js
+  if (!window.translations || !window.translations[lang]) {
+    console.warn("No translations for lang:", lang);
+    return;
+  }
 
   document.documentElement.lang = lang;
+  localStorage.setItem("lang", lang);
 
+  // Aplica traducciones
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.dataset.i18n;
-    const translation = getNestedTranslation(translations[lang], key);
+    const t = getNestedTranslation(window.translations[lang], key);
 
-    // OJO: si tu traducción es "", también la aplicamos
-    if (translation !== undefined && translation !== null) {
-      el.innerHTML = translation;
+    // Si no existe traducción, NO lo borres
+    if (t !== undefined && t !== null) {
+      el.innerHTML = t;
     }
   });
 
-  localStorage.setItem("lang", lang);
+  // Estado visual del switch (desktop y móvil)
+  const btnDesktop = document.getElementById("lang-toggle");
+  if (btnDesktop) btnDesktop.classList.toggle("is-en", lang === "en");
 
-  // Actualiza etiqueta del botón (si existe)
-  const btn = document.getElementById("lang-toggle");
-  if (btn) {
-    // estado visual del switch
-    btn.classList.toggle("is-en", lang === "en");
-  }
-
-
+  const btnMobile = document.getElementById("lang-toggle-mobile");
+  if (btnMobile) btnMobile.classList.toggle("is-en", lang === "en");
 }
 
-// Conecta el botón de idioma (y evita listeners duplicados)
-function bindLangToggle() {
-  const toggleBtn = document.getElementById("lang-toggle");
-  if (!toggleBtn) return;
+function bindLangToggles() {
+  const ids = ["lang-toggle", "lang-toggle-mobile"];
 
-  if (toggleBtn.dataset.bound === "true") return;
+  ids.forEach((id) => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
 
-  toggleBtn.addEventListener("click", () => {
-    const current = localStorage.getItem("lang") || DEFAULT_LANG;
-    const next = current === "es" ? "en" : "es";
-    applyLanguage(next);
+    if (btn.dataset.bound === "true") return;
+
+    btn.addEventListener("click", () => {
+      const current = localStorage.getItem("lang") || DEFAULT_LANG;
+      const next = current === "es" ? "en" : "es";
+      applyLanguage(next);
+      console.log("Idioma cambiado a:", next); // para que lo veas clarito
+    });
+
+    btn.dataset.bound = "true";
   });
-
-  toggleBtn.dataset.bound = "true";
 }
 
-// Inicializa idioma + conecta botón
 function initLanguage() {
-  const savedLang = localStorage.getItem("lang") || DEFAULT_LANG;
-  applyLanguage(savedLang);
-  bindLangToggle();
+  const saved = localStorage.getItem("lang") || DEFAULT_LANG;
+  applyLanguage(saved);
+  bindLangToggles();
 }
 
-// ✅ Para que main.js pueda llamar esto tras inyectar header/footer
+// Exponer para main.js
 window.applyLanguage = applyLanguage;
 window.initLanguage = initLanguage;
-window.bindLangToggle = bindLangToggle;
+window.bindLangToggles = bindLangToggles;
 
-// 1) Primera carga normal
 document.addEventListener("DOMContentLoaded", initLanguage);
 
-// 2) Si main.js dispara un refresh, re-conectamos botón y re-aplicamos idioma
 document.addEventListener("i18n:refresh", (e) => {
   const lang = e?.detail?.lang || localStorage.getItem("lang") || DEFAULT_LANG;
   applyLanguage(lang);
-  bindLangToggle();
+  bindLangToggles();
 });
